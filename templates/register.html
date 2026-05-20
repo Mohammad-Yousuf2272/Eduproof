@@ -1,47 +1,207 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Register</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduProof Register</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+
+        body{
+            margin:0;
+            font-family:'Inter',sans-serif;
+            background:#0B1120;
+            color:white;
+            overflow:hidden;
+        }
+
+        .auth-container{
+            display:flex;
+            min-height:100vh;
+        }
+
+        .auth-left{
+            flex:1;
+            background:linear-gradient(135deg,#111827,#0B1120);
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            padding:80px;
+        }
+
+        .auth-left h1{
+            font-size:64px;
+            margin-bottom:20px;
+            line-height:1.1;
+        }
+
+        .auth-left span{
+            color:#7C8CFF;
+        }
+
+        .auth-left p{
+            color:#94A3B8;
+            line-height:1.8;
+            font-size:18px;
+            max-width:500px;
+        }
+
+        .auth-right{
+            flex:1;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            position:relative;
+        }
+
+        .register-card{
+            width:440px;
+            padding:50px;
+            border-radius:30px;
+            background:rgba(255,255,255,0.05);
+            backdrop-filter:blur(20px);
+            border:1px solid rgba(255,255,255,0.08);
+            animation:fadeUp 1s ease;
+        }
+
+        .register-card h2{
+            font-size:38px;
+            margin-bottom:10px;
+        }
+
+        .register-card p{
+            color:#94A3B8;
+            margin-bottom:35px;
+        }
+
+        .input-group{
+            margin-bottom:20px;
+        }
+
+        .input-group label{
+            display:block;
+            margin-bottom:10px;
+            color:#CBD5E1;
+        }
+
+        .input-group input{
+            width:100%;
+            padding:16px;
+            border:none;
+            outline:none;
+            border-radius:14px;
+            background:#111827;
+            color:white;
+            font-size:15px;
+            transition:0.3s ease;
+        }
+
+        .input-group input:focus{
+            box-shadow:0 0 0 3px rgba(124,140,255,0.3);
+        }
+
+        .register-btn{
+            width:100%;
+            padding:16px;
+            border:none;
+            border-radius:14px;
+            background:#7C8CFF;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+            transition:0.3s ease;
+            margin-top:10px;
+        }
+
+        .register-btn:hover{
+            transform:translateY(-3px);
+            box-shadow:0 10px 25px rgba(124,140,255,0.35);
+        }
+
+        .bottom-text{
+            text-align:center;
+            margin-top:25px;
+            color:#94A3B8;
+        }
+
+        .bottom-text a{
+            color:#7C8CFF;
+            text-decoration:none;
+        }
+
+        @media(max-width:900px){
+
+            .auth-left{
+                display:none;
+            }
+
+            .auth-right{
+                width:100%;
+                padding:20px;
+            }
+
+            .register-card{
+                width:100%;
+            }
+        }
+
+    </style>
+
 </head>
+
 <body>
 
-<div class="auth-wrapper">
+<div class="auth-container">
 
-<div class="auth-card">
+    <div class="auth-left">
 
-<h2>Create Account</h2>
+        <h1>Join <span>EduProof</span></h1>
 
-<form method="POST">
+        <p>
+            Create your secure account and start verifying educational documents
+            with confidence and advanced protection.
+        </p>
 
-<div class="input-group">
-<label>Username</label>
-<input name="username" placeholder="Choose username" required>
-</div>
+    </div>
 
-<div class="input-group">
-<label>Password</label>
-<input type="password" name="password" placeholder="Create password" required>
-</div>
+    <div class="auth-right">
 
-<div class="input-group">
-<label>Select Role</label>
-<select name="role">
-<option value="student">Student</option>
-<option value="teacher">Teacher</option>
-</select>
-</div>
+        <form class="register-card" method="POST">
 
-<button type="submit">REGISTER</button>
+            <h2>Create Account</h2>
 
-</form>
+            <p>Start your secure verification journey today.</p>
 
-<div class="auth-footer">
-<p>Already have an account? <a href="/login">Login</a></p>
-</div>
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" name="name" placeholder="Enter your name">
+            </div>
 
-</div>
+            <div class="input-group">
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Enter your email">
+            </div>
+
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Create password">
+            </div>
+
+            <button class="register-btn" type="submit">
+                Create Account
+            </button>
+
+            <div class="bottom-text">
+                Already have an account?
+                <a href="/login">Login</a>
+            </div>
+
+        </form>
+
+    </div>
 
 </div>
 
