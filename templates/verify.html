@@ -1,0 +1,30 @@
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<div class="card">
+
+<h2>Verify Signed Document</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+<input name="username" placeholder="Username" required>
+
+<input type="file" name="file" required>
+
+<input type="file" name="signature" required>
+
+<button type="submit">Verify Signature</button>
+
+</form>
+
+{% if result %}
+
+{% if "Successfully" in result %}
+<h3 class="success">{{ result }}</h3>
+{% else %}
+<h3 class="fail">{{ result }}</h3>
+{% endif %}
+
+{% endif %}
+
+</div>

@@ -1,0 +1,5 @@
+Flask
+cryptography
+Werkzeug
+qrcode
+pillow
