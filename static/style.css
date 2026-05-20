@@ -230,3 +230,117 @@ footer{
         padding:20px;
     }
 }
+html{
+    scroll-behavior:smooth;
+}
+
+/* Floating animation */
+
+@keyframes float {
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* Fade animation */
+
+@keyframes fadeUp {
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Hero animations */
+
+.hero-left{
+    animation:fadeUp 1s ease;
+}
+
+.hero-right{
+    animation:fadeUp 1.2s ease;
+}
+
+.floating-card{
+    animation:float 4s ease-in-out infinite;
+    transition:0.3s ease;
+}
+
+.floating-card:hover{
+    transform:translateY(-12px) scale(1.03);
+    background:#1A2335;
+}
+
+/* Shield glow */
+
+.shield{
+    box-shadow:0 0 40px rgba(124,140,255,0.4);
+    animation:float 3s ease-in-out infinite;
+}
+
+/* Buttons */
+
+.primary-btn,
+.secondary-btn,
+.nav-btn{
+    transition:all 0.3s ease;
+}
+
+.primary-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(124,140,255,0.35);
+}
+
+.secondary-btn:hover,
+.nav-btn:hover{
+    transform:translateY(-3px);
+    background:#1A2335;
+}
+
+/* Feature cards */
+
+.feature-card{
+    transition:0.3s ease;
+}
+
+.feature-card:hover{
+    transform:translateY(-8px);
+    background:#172033;
+}
+
+/* Navbar blur */
+
+.navbar{
+    backdrop-filter:blur(12px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(11,17,32,0.75);
+}
+
+/* Hero title polish */
+
+.hero-left h1{
+    letter-spacing:-2px;
+}
+
+/* Smooth card glow */
+
+.feature-card,
+.floating-card,
+.shield-card{
+    border:1px solid rgba(255,255,255,0.04);
+}
