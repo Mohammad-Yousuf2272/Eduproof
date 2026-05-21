@@ -1,124 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduProof - Student Verification System</title>
+{% extends 'base.html' %}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+{% block title %}EduProof{% endblock %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+{% block content %}
 
-<nav class="navbar">
-    <div class="logo">
-        <div class="logo-icon">✓</div>
-        <div>
-            <h2>EduProof</h2>
-            <p>Student First. Always Secure.</p>
-        </div>
-    </div>
+<div class="text-center mt-5">
 
-    <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/register">Register</a></li>
-        <li><a href="/login">Login</a></li>
-    </ul>
+    <h1 class="display-3 fw-bold mb-4">
+        Secure Educational Verification
+    </h1>
 
-    <a href="/register">
-        <button class="nav-btn">Get Started</button>
+    <p class="lead mb-5">
+        Modern platform for certificate verification and management.
+    </p>
+
+    <a href="/login" class="btn btn-custom btn-lg me-3">
+        Login
     </a>
-</nav>
 
-<section class="hero">
+    <a href="/register" class="btn btn-outline-light btn-lg">
+        Register
+    </a>
 
-    <div class="hero-left">
+</div>
 
-        <div class="tag">
-            Smart Verification for Students
-        </div>
-
-        <h1>
-            Verify Today,<br>
-            <span>Achieve Tomorrow.</span>
-        </h1>
-
-        <p>
-            EduProof helps students securely verify educational documents anytime,
-            anywhere with advanced security and instant verification.
-        </p>
-
-        <div class="hero-buttons">
-            <a href="/register">
-                <button class="primary-btn">Verify Now</button>
-            </a>
-
-            <a href="/login">
-                <button class="secondary-btn">Login</button>
-            </a>
-        </div>
-
-    </div>
-
-    <div class="hero-right">
-
-        <div class="shield-card">
-            <div class="shield">✓</div>
-        </div>
-
-        <div class="floating-card top-left">
-            Secure<br>
-            RSA + SHA-256
-        </div>
-
-        <div class="floating-card top-right">
-            Authentic<br>
-            Tamper Detection
-        </div>
-
-        <div class="floating-card bottom-left">
-            Instant<br>
-            Verification
-        </div>
-
-        <div class="floating-card bottom-right">
-            Smart<br>
-            QR Verification
-        </div>
-
-    </div>
-</section>
-
-<section class="features">
-
-    <div class="feature-card">
-        <h3>Made for Students</h3>
-        <p>Quick and easy verification for academic needs.</p>
-    </div>
-
-    <div class="feature-card">
-        <h3>100% Secure</h3>
-        <p>Advanced encryption protects your data.</p>
-    </div>
-
-    <div class="feature-card">
-        <h3>Save Time</h3>
-        <p>Get verified instantly without waiting.</p>
-    </div>
-
-    <div class="feature-card">
-        <h3>Trusted Everywhere</h3>
-        <p>Accepted by institutions and organizations.</p>
-    </div>
-
-</section>
-
-<footer>
-    Empowering Students. Securing Education.
-</footer>
-
-</body>
-</html>
+{% endblock %}
