@@ -1,30 +1,47 @@
 
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% extends 'base.html' %}
 
-<div class="card">
+{% block title %}Verify Certificate | EduProof{% endblock %}
 
-<h2>Verify Signed Document</h2>
+{% block content %}
 
-<form method="POST" enctype="multipart/form-data">
+<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
 
-<input name="username" placeholder="Username" required>
+    <div class="glass-card" style="width: 500px;">
 
-<input type="file" name="file" required>
+        <h2 class="text-center mb-4">
 
-<input type="file" name="signature" required>
+            <i class="fa-solid fa-certificate"></i>
 
-<button type="submit">Verify Signature</button>
+            Verify Certificate
 
-</form>
+        </h2>
 
-{% if result %}
+        <form method="POST">
 
-{% if "Successfully" in result %}
-<h3 class="success">{{ result }}</h3>
-{% else %}
-<h3 class="fail">{{ result }}</h3>
-{% endif %}
+            <div class="mb-3">
 
-{% endif %}
+                <label class="form-label">
+                    Certificate ID
+                </label>
+
+                <input type="text"
+                       name="certificate_id"
+                       class="form-control"
+                       placeholder="Enter certificate ID"
+                       required>
+
+            </div>
+
+            <button type="submit"
+                    class="btn btn-custom w-100">
+                Verify
+            </button>
+
+        </form>
+
+    </div>
 
 </div>
+
+{% endblock %}
