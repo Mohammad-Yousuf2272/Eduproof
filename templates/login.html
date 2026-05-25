@@ -1,69 +1,41 @@
 
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
 
-{% block title %}Login | EduProof{% endblock %}
+<div class="auth-wrapper">
 
-{% block content %}
+<div class="auth-card">
 
-<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+<h2>Login</h2>
 
-    <div class="glass-card" style="width: 400px;">
+<form method="POST">
 
-        <h2 class="text-center mb-4">
-            <i class="fa-solid fa-user-lock"></i>
-            Login
-        </h2>
+<div class="input-group">
+<label>Username</label>
+<input name="username" placeholder="Enter your username" required>
+</div>
 
-        <form method="POST">
+<div class="input-group">
+<label>Password</label>
+<input type="password" name="password" placeholder="Enter your password" required>
+</div>
 
-            <div class="mb-3">
+<button type="submit">SIGN IN</button>
 
-                <label class="form-label">
-                    Email
-                </label>
+</form>
 
-                <input type="email"
-                       name="email"
-                       class="form-control"
-                       placeholder="Enter your email"
-                       required>
-
-            </div>
-
-            <div class="mb-3">
-
-                <label class="form-label">
-                    Password
-                </label>
-
-                <input type="password"
-                       name="password"
-                       class="form-control"
-                       placeholder="Enter your password"
-                       required>
-
-            </div>
-
-            <button type="submit"
-                    class="btn btn-custom w-100">
-                Login
-            </button>
-
-        </form>
-
-        <div class="text-center mt-3">
-
-            Don't have an account?
-
-            <a href="/register" class="text-info">
-                Register
-            </a>
-
-        </div>
-
-    </div>
+<div class="auth-footer">
+<p>Don't have an account? <a href="/register">Sign Up</a></p>
+</div>
 
 </div>
 
-{% endblock %}
+</div>
+
+</body>
 </html>
