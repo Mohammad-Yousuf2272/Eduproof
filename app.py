@@ -415,7 +415,6 @@ def download_signature(filename):
 # =========================
 
 if __name__ == "__main__":
-
     init_db()
 
     os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -423,4 +422,4 @@ if __name__ == "__main__":
     os.makedirs(QRCODE_FOLDER, exist_ok=True)
     os.makedirs(KEY_FOLDER, exist_ok=True)
 
-   app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
