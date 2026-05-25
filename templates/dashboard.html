@@ -1,65 +1,15 @@
 
-{% extends 'base.html' %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-{% block title %}Dashboard | EduProof{% endblock %}
+<div class="card">
 
-{% block content %}
+<h2>Welcome {{ username }}</h2>
 
-<h1 class="mb-4">
-    <i class="fa-solid fa-gauge"></i>
-    Dashboard
-</h1>
+<p>Professional Cybersecurity Dashboard</p>
 
-<div class="row">
-
-    <div class="col-md-4 mb-4">
-
-        <div class="glass-card text-center">
-
-            <i class="fa-solid fa-certificate fa-3x mb-3 text-info"></i>
-
-            <h3>Certificates</h3>
-
-            <p>
-                Manage and verify certificates securely.
-            </p>
-
-        </div>
-
-    </div>
-
-    <div class="col-md-4 mb-4">
-
-        <div class="glass-card text-center">
-
-            <i class="fa-solid fa-users fa-3x mb-3 text-info"></i>
-
-            <h3>Users</h3>
-
-            <p>
-                Manage registered users in the system.
-            </p>
-
-        </div>
-
-    </div>
-
-    <div class="col-md-4 mb-4">
-
-        <div class="glass-card text-center">
-
-            <i class="fa-solid fa-shield-halved fa-3x mb-3 text-info"></i>
-
-            <h3>Security</h3>
-
-            <p>
-                Secure educational verification platform.
-            </p>
-
-        </div>
-
-    </div>
+<a class="btn primary" href="/sign">Sign Document</a>
+<a class="btn secondary" href="/verify">Verify Document</a>
+<a class="btn primary" href="/logs">Audit Logs</a>
+<a class="btn secondary" href="/logout">Logout</a>
 
 </div>
-
-{% endblock %}
