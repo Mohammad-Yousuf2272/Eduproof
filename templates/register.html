@@ -1,82 +1,50 @@
 
-{% extends 'base.html' %}
 
-{% block title %}Register | EduProof{% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
 
-{% block content %}
+<div class="auth-wrapper">
 
-<div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+<div class="auth-card">
 
-    <div class="glass-card" style="width: 450px;">
+<h2>Create Account</h2>
 
-        <h2 class="text-center mb-4">
-            <i class="fa-solid fa-user-plus"></i>
-            Register
-        </h2>
+<form method="POST">
 
-        <form method="POST">
+<div class="input-group">
+<label>Username</label>
+<input name="username" placeholder="Choose username" required>
+</div>
 
-            <div class="mb-3">
+<div class="input-group">
+<label>Password</label>
+<input type="password" name="password" placeholder="Create password" required>
+</div>
 
-                <label class="form-label">
-                    Full Name
-                </label>
+<div class="input-group">
+<label>Select Role</label>
+<select name="role">
+<option value="student">Student</option>
+<option value="teacher">Teacher</option>
+</select>
+</div>
 
-                <input type="text"
-                       name="name"
-                       class="form-control"
-                       placeholder="Enter your full name"
-                       required>
+<button type="submit">REGISTER</button>
 
-            </div>
+</form>
 
-            <div class="mb-3">
-
-                <label class="form-label">
-                    Email
-                </label>
-
-                <input type="email"
-                       name="email"
-                       class="form-control"
-                       placeholder="Enter your email"
-                       required>
-
-            </div>
-
-            <div class="mb-3">
-
-                <label class="form-label">
-                    Password
-                </label>
-
-                <input type="password"
-                       name="password"
-                       class="form-control"
-                       placeholder="Create password"
-                       required>
-
-            </div>
-
-            <button type="submit"
-                    class="btn btn-custom w-100">
-                Register
-            </button>
-
-        </form>
-
-        <div class="text-center mt-3">
-
-            Already have an account?
-
-            <a href="/login" class="text-info">
-                Login
-            </a>
-
-        </div>
-
-    </div>
+<div class="auth-footer">
+<p>Already have an account? <a href="/login">Login</a></p>
+</div>
 
 </div>
 
-{% endblock %}
+</div>
+
+</body>
+</html>
